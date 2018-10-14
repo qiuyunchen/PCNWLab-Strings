@@ -46,6 +46,16 @@ console.log(getLastChar('woohoo'), 'o');
     @example - get3rdChar('mo'); // 'not enough characters!'
 */
 
+const get3rdChar = str => {
+    if (str.length < 3) return 'not enough characters!';
+    return str[2];
+}
+
+//test
+console.log(get3rdChar('taq'), 'q');
+console.log(get3rdChar('maria'), 'r');
+console.log(get3rdChar('mo'), 'not enough characters!');
+
 /* 4
     @func get3rdCharFromEnd
     @param {string} str
