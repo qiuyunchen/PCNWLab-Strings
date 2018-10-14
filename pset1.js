@@ -85,12 +85,12 @@ console.log(get3rdCharFromEnd('taq karim'), 'r');
 */
 
 const startsWithVowel = str => {
-    let lowerCase = str.toLowerCase();
-    if ( lowerCase[0] === "a" ||
-    lowerCase[0] === "e" ||
-    lowerCase[0] === "i" ||
-    lowerCase[0] === "o" ||
-    lowerCase[0] === "u" ){
+    str = str.toLowerCase();
+    if ( str[0] === "a" ||
+    str[0] === "e" ||
+    str[0] === "i" ||
+    str[0] === "o" ||
+    str[0] === "u" ){
         return true;
     }
     return false;
@@ -114,6 +114,24 @@ console.log(startsWithVowel('hey'), false);
     @example - endsWithVowel('AndI'); // true
 */
 
+const endsWithVowel = str => {
+    str = str.toLowerCase();
+    if (str[str.length-1] === 'a' ||
+    str[str.length-1] === 'e' ||
+    str[str.length-1] === 'i' ||
+    str[str.length-1] === 'o' ||
+    str[str.length-1] === 'u' ){
+        return true;
+    }
+    return false;
+} 
+
+//test
+console.log(endsWithVowel('taq'), false);
+console.log(endsWithVowel('Dfghjkl'), false);
+console.log(endsWithVowel('andi'), true);
+console.log(endsWithVowel('AndI'), true);
+console.log(endsWithVowel('Maria'), true);
 
 /* 7
     @func hasVowels
