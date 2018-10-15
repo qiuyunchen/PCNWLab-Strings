@@ -18,11 +18,13 @@
 const makeEven = str => (str.length % 2 === 1) ? str + "#" : str;
 
 //test
+
+console.log('----------------------');
 console.log(makeEven("taq"), "taq#");
 console.log(makeEven("john"), "john");
 console.log(makeEven("kitty"), "kitty#");
 console.log(makeEven("hell"), "hell");
-
+console.log('----------------------');
 /* 2
     @func getLastChar
     @param {string} str
@@ -36,7 +38,7 @@ const getLastChar = str => str[str.length-1];
 console.log(getLastChar('taq'), 'q');
 console.log(getLastChar('qiu'), 'u');
 console.log(getLastChar('woohoo'), 'o');
-
+console.log('----------------------');
 /* 3
     @func get3rdChar
     @param {string} str
@@ -55,7 +57,7 @@ const get3rdChar = str => {
 console.log(get3rdChar('taq'), 'q');
 console.log(get3rdChar('maria'), 'r');
 console.log(get3rdChar('mo'), 'not enough characters!');
-
+console.log('----------------------');
 /* 4
     @func get3rdCharFromEnd
     @param {string} str
@@ -72,7 +74,7 @@ const get3rdCharFromEnd = str => (str.length > 2) ? str[str.length-3] : 'not eno
 console.log(get3rdCharFromEnd('taq'), 't');
 console.log(get3rdCharFromEnd('mo'), 'not enough characters!');
 console.log(get3rdCharFromEnd('taq karim'), 'r');
-
+console.log('----------------------');
 /* 5
     @func startsWithVowel
     @param {string} str
@@ -102,7 +104,7 @@ console.log(startsWithVowel('Dfghjkl'), false);
 console.log(startsWithVowel('andy'), true);
 console.log(startsWithVowel('Andy'), true);
 console.log(startsWithVowel('hey'), false);
-
+console.log('----------------------');
 /* 6
     @func endsWithVowel
     @param {string} str
@@ -174,6 +176,8 @@ console.log('----------------------');
     @example - hasUpperCase('tag'); // false
     @example - hasUpperCase('taq karim'); // false
 */
+
+
 
 /* 9
     @func isPalindromic
