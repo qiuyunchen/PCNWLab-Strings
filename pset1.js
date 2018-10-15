@@ -240,6 +240,22 @@ console.log(isPalindromic('taq karim'), false);
     @example - getInitials('sue RonaN'); // "sr"
 */
 
+const getInitials = str => {
+    let array = str.split(" ");
+    let head = 0;
+    let tail = array.length - 1;
+    let a = array[head];
+    let b = array[tail];
+    return (a[0] + b[0]).toLowerCase();
+}
+
+//test
+console.log('---------------getInitials test---------------');
+console.log(getInitials('taq karim'), 'tk');
+console.log(getInitials('mo    mosayed'), 'mm');
+console.log(getInitials('John       Smith'), 'js');
+console.log(getInitials('sue RonaN'), 'sr');
+
 /* 11
     @func isPerfectStr
     @param {string} str
