@@ -144,6 +144,25 @@ console.log(endsWithVowel('Maria'), true);
     @example - hasVowels('taq karim'); // true
 */
 
+const hasVowels = str => { 
+    if (str.length === 0) return "no input";
+    if (str.length === 1) return startsWithVowel(str);
+    if (startsWithVowel(str) === true) return true;
+    str = str.slice(1);
+    return hasVowels(str);
+}
+
+//test
+console.log('----------------------');
+console.log(hasVowels('a'), true);
+console.log(hasVowels('b'), false);
+console.log(hasVowels('BC'), false);
+console.log(hasVowels('Qiu'), true);
+console.log(hasVowels('taq'), true);
+console.log(hasVowels('TAQ'), true);
+console.log(hasVowels('dfghjkl'), false);
+console.log(hasVowels('taq karim'), true);
+console.log('----------------------');
 
 /* 8
     @func hasUpperCase
