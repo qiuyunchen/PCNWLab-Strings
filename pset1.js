@@ -271,6 +271,36 @@ console.log(getInitials('sue RonaN'), 'sr');
     @example - isPerfectStr('asdfaeKeccccc'); // true
 */
 
+const isPerfectStr = str => {
+    if (str.length < 3) return false;
+    if (str.length % 2 === 0) return false;
+    let midIndex = Math.floor( str.length /2 );
+    let firstIndex = Math.floor( str.length /2 ) - 1;
+    let thirdIndex = Math.floor( str.length /2 ) + 1;
+    if (str[firstIndex] === str[thirdIndex] &&
+        (str[firstIndex] === 'a' ||
+         str[firstIndex] === 'e' ||
+         str[firstIndex] === 'i' ||
+         str[firstIndex] === 'o' ||
+         str[firstIndex] === 'u' ) &&
+        str[midIndex] !== 'a' &&
+        str[midIndex] !== 'e' &&
+        str[midIndex] !== 'i' &&
+        str[midIndex] !== 'o' &&
+        str[midIndex] !== 'u'){
+            return true;
+        }
+    return false;
+}
+
+//test
+console.log('---------------isPerfectStr test---------------');
+console.log(isPerfectStr('ab'), false);
+console.log(isPerfectStr('aaa'), false);
+console.log(isPerfectStr('aba'), true);
+console.log(isPerfectStr('asdfaeKeccc'), false);
+console.log(isPerfectStr('asdfaeKeccccc'), true);
+
 /* 12
     @func strMasher
     @param {string} str1
