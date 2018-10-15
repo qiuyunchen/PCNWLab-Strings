@@ -105,6 +105,7 @@ console.log(startsWithVowel('andy'), true);
 console.log(startsWithVowel('Andy'), true);
 console.log(startsWithVowel('hey'), false);
 console.log('----------------------');
+
 /* 6
     @func endsWithVowel
     @param {string} str
@@ -147,7 +148,7 @@ console.log(endsWithVowel('Maria'), true);
 */
 
 const hasVowels = str => { 
-    if (str.length === 0) return "no input";
+    if (str === undefined) return "undefined";
     if (str.length === 1) return startsWithVowel(str);
     if (startsWithVowel(str) === true) return true;
     str = str.slice(1);
@@ -156,6 +157,7 @@ const hasVowels = str => {
 
 //test
 console.log('----------------------');
+console.log(hasVowels(), 'undefined');
 console.log(hasVowels('a'), true);
 console.log(hasVowels('b'), false);
 console.log(hasVowels('BC'), false);
@@ -177,7 +179,22 @@ console.log('----------------------');
     @example - hasUpperCase('taq karim'); // false
 */
 
+// I glimpsed at Robert's solution for this one...
+// Damn it, why didn't I think of this?!!!
+// I was dumbly trying to compare each string letter to each upper case letter -_-
 
+const hasUpperCase = str => {
+    if (str === undefined) return "undefined";
+    return str !== str.toLowerCase() ? true : false;
+}
+
+//test
+console.log(hasUpperCase(), "undefined");
+console.log(hasUpperCase('tAq'), true);
+console.log(hasUpperCase('Q'), true);
+console.log(hasUpperCase('tag'), false);
+console.log(hasUpperCase('taq karim'), false);
+console.log('----------------------');
 
 /* 9
     @func isPalindromic
