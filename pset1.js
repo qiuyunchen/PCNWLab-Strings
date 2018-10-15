@@ -207,6 +207,26 @@ console.log('----------------------');
     @example - hasUpperCase('taq karim'); // false
 */
 
+const isPalindromic = str => {
+    let head = 0;
+    let tail = str.length - 1;
+    if (str === undefined) return 'undefined';
+    if (head === tail) return true; 
+    if (str[head] === str[tail] ){
+        str = str.slice(1, tail);
+        return isPalindromic(str);
+    }
+    return false;
+}
+
+//test
+console.log('---------------isPalindromic test---------------');
+console.log(isPalindromic('racecar'), true);
+console.log(isPalindromic('racecars'), false);
+console.log(isPalindromic('bats see bees stab'), false);
+console.log(isPalindromic('batsseebeesstab'), true);
+console.log(isPalindromic('taq karim'), false);
+
 /* 10
     @func getInitials
     @param {string} str
