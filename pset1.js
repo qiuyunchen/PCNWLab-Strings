@@ -312,3 +312,16 @@ console.log(isPerfectStr('asdfaeKeccccc'), true);
     @example - capitalLast('hello', 'wrold'); // "helwroldlo"
 */
 
+const strMasher = (str1, str2) => {
+    let midIndex = Math.ceil( str1.length /2 );
+    let half1 = str1.slice(0, midIndex);
+    let half2 = str1.slice(midIndex, str1.length);
+    return half1 + str2 + half2;
+}
+
+//test
+console.log('---------------strMasher test---------------');
+console.log(strMasher('help', 'me'), 'hemelp');
+console.log(strMasher('hello', 'world'), 'helworldlo');
+console.log(strMasher('aaaa', 'lol'), 'aalolaa');
+console.log(strMasher('oooo', 'dad'), 'oodadoo');
