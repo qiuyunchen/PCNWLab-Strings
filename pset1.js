@@ -211,7 +211,10 @@ const isPalindromic = str => {
     let head = 0;
     let tail = str.length - 1;
     if (str === undefined) return 'undefined';
-    if (head === tail) return true; 
+    if (head === tail) return true;
+    if (str.length === 2){
+        return str[0] === str[1];
+    } 
     if (str[head] === str[tail] ){
         str = str.slice(1, tail);
         return isPalindromic(str);
@@ -221,6 +224,8 @@ const isPalindromic = str => {
 
 //test
 console.log('---------------isPalindromic test---------------');
+console.log(isPalindromic('aa'), true);
+console.log(isPalindromic('ab'), false);
 console.log(isPalindromic('racecar'), true);
 console.log(isPalindromic('racecars'), false);
 console.log(isPalindromic('bats see bees stab'), false);
@@ -315,7 +320,7 @@ console.log(isPerfectStr('asdfaeKeccccc'), true);
 const strMasher = (str1, str2) => {
     let midIndex = Math.ceil( str1.length /2 );
     let half1 = str1.slice(0, midIndex);
-    let half2 = str1.slice(midIndex, str1.length);
+    let half2 = str1.slice(midIndex, str1.length + 1);
     return half1 + str2 + half2;
 }
 
